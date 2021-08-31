@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Container } from './components/Container';
 import { Theme } from './providers/Theme';
@@ -8,12 +8,17 @@ import Modals from './providers/Modals';
 import WalletProvider from './providers/WalletProvider';
 import { store } from './state';
 import { ButtonConnect } from './components/ButtonConnect';
+import Home from './views/Home';
 
 export const App: React.FC = () => {
   return (
     <Providers>
       <ButtonConnect></ButtonConnect>
-      <Wrapper></Wrapper>
+      <Wrapper>
+        <Switch>
+          <Route path="/" exact component={Home} />
+        </Switch>
+      </Wrapper>
     </Providers>
   );
 };

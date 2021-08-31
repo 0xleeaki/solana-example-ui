@@ -8,6 +8,7 @@ import {
 } from '../../wallet-adapters';
 import { SolletExtensionAdapter } from '../../wallet-adapters/sollet-extension';
 import { SolflareExtensionWalletAdapter } from '../../wallet-adapters/solflare-extension';
+import { Button } from '../../components/Buttons';
 
 const ASSET_URL = 'https://cdn.jsdelivr.net/gh/solana-labs/oyster@main/assets/wallets';
 
@@ -145,9 +146,9 @@ const WalletProvider: React.FC = ({ children }) => {
             };
 
             return (
-              <button key={provider.name} onClick={onClick}>
+              <Button key={provider.name} onClick={onClick}>
                 {provider.name}
-              </button>
+              </Button>
             );
           })
         : null}
