@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { Container } from './components/Container';
 import { Theme } from './providers/Theme';
-import Modals from './providers/Modals';
 import WalletProvider from './providers/WalletProvider';
 import { store } from './state';
 import { ButtonConnect } from './components/ButtonConnect';
@@ -35,9 +34,7 @@ const Providers: React.FC = ({ children }) => {
     <Provider store={store}>
       <WalletProvider>
         <Theme>
-          <Modals>
-            <BrowserRouter>{children}</BrowserRouter>
-          </Modals>
+          <BrowserRouter>{children}</BrowserRouter>
         </Theme>
       </WalletProvider>
     </Provider>
